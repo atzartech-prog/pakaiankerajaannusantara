@@ -2,29 +2,29 @@
    DESIGN TOKENS - MUSEUM & PARCHMENT HERITAGE
    ========================================================================== */
 :root {
-    /* Color Palette - Noble Museum Theme */
-    --color-bg: #121416;         /* Deep obsidian/slate black */
-    --color-surface: #1B1E22;    /* Dark museum gray */
-    --color-surface-hover: #23272C;
-    --color-text-main: #E2DFD8;  /* Muted parchment off-white */
-    --color-text-muted: #8E98A0;  /* Soft cool gray */
+    /* Color Palette - Noble Museum Theme (Light Parchment Version) */
+    --color-bg: #FAF6F0;         /* Soft warm cream parchment paper */
+    --color-surface: #FFFFFF;    /* Pure ivory/white cards */
+    --color-surface-hover: #F5EFEB;
+    --color-text-main: #1C1E20;  /* Rich charcoal for crisp legibility */
+    --color-text-muted: #5C6268;  /* Muted warm gray */
     --color-primary: #8B2635;    /* Heritage Crimson Red */
-    --color-primary-light: #4A1E24;
-    --color-secondary: #C5A059;  /* Antique Gold */
-    --color-secondary-light: #3D3524;
+    --color-primary-light: #FCEBEB;
+    --color-secondary: #B18F4E;  /* Antique Gold/Bronze (darkened slightly for light background contrast) */
+    --color-secondary-light: #FAF3E5;
     --color-accent: #2E5A44;     /* Deep forest jade */
-    --color-border: #2C3136;     /* Dark charcoal border */
-    --color-border-focus: #C5A059;
+    --color-border: #E6DFD3;     /* Soft warm beige border */
+    --color-border-focus: #B18F4E;
     
     /* Typographic Fonts */
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Shadows & Elevations */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-    --shadow-gold: 0 0 15px rgba(197, 160, 89, 0.15);
+    /* Shadows & Elevations (Softened for light theme) */
+    --shadow-sm: 0 2px 8px rgba(28, 30, 32, 0.04);
+    --shadow-md: 0 8px 24px rgba(28, 30, 32, 0.07);
+    --shadow-lg: 0 16px 40px rgba(28, 30, 32, 0.12);
+    --shadow-gold: 0 0 15px rgba(177, 143, 78, 0.12);
     
     /* Radii */
     --radius-sm: 6px;

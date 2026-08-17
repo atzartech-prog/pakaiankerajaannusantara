@@ -32,8 +32,8 @@ function getHistoricalClothingSVG(id, palette, size = "100%") {
     let svgBackground = `
         <defs>
             <linearGradient id="grad-hist-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1E2225" />
-                <stop offset="100%" stop-color="#14171A" />
+                <stop offset="0%" stop-color="#FFFDF9" />
+                <stop offset="100%" stop-color="#F2EDE4" />
             </linearGradient>
             <linearGradient id="gold-hist-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#FFEFA6" />
@@ -41,22 +41,22 @@ function getHistoricalClothingSVG(id, palette, size = "100%") {
                 <stop offset="100%" stop-color="#8C6B23" />
             </linearGradient>
             <linearGradient id="shading-hist-${id}" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#000000" stop-opacity="0.35" />
-                <stop offset="35%" stop-color="#000000" stop-opacity="0" />
-                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1" />
+                <stop offset="0%" stop-color="#000000" stop-opacity="0.2" />
+                <stop offset="40%" stop-color="#000000" stop-opacity="0" />
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.15" />
             </linearGradient>
             <filter id="shadow-hist-${id}" x="-20%" y="-20%" width="140%" height="140%">
-                <drop-shadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.3" />
+                <drop-shadow dx="0" dy="5" stdDeviation="4" flood-color="#2D2319" flood-opacity="0.12" />
             </filter>
         </defs>
-        <!-- Latar Belakang Kartu Gelap Elegan -->
+        <!-- Latar Belakang Kartu Kertas Kuno Terang -->
         <rect width="200" height="240" rx="12" fill="url(#grad-hist-${id})" />
-        <circle cx="100" cy="115" r="55" fill="${secondary}" opacity="0.04" />
+        <circle cx="100" cy="115" r="55" fill="${secondary}" opacity="0.06" />
         
         <!-- Penyangga Stand Museum Kayu Antik -->
-        <path d="M100,50 L100,210 M70,210 L130,210" stroke="#5E4E42" stroke-width="3" stroke-linecap="round" fill="none" />
-        <path d="M74,60 C90,52 110,52 126,60" stroke="#5E4E42" stroke-width="4" stroke-linecap="round" fill="none" />
-        <circle cx="100" cy="40" r="5" stroke="#5E4E42" stroke-width="3" fill="none" />
+        <path d="M100,50 L100,210 M70,210 L130,210" stroke="#8E7C6E" stroke-width="3" stroke-linecap="round" fill="none" />
+        <path d="M74,60 C90,52 110,52 126,60" stroke="#8E7C6E" stroke-width="4" stroke-linecap="round" fill="none" />
+        <circle cx="100" cy="40" r="5" stroke="#8E7C6E" stroke-width="3" fill="none" />
     `;
     
     let svgCostumeContent = '';
