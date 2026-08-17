@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Digital Busana Nusantara - Linimasa Evolusi Pakaian Adat</title>
+    <meta name="description" content="Jelajahi sejarah dan linimasa evolusi busana kerajaan nusantara kuno hingga gaya fusion modern kontemporer secara interaktif.">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER & LOGO -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-crown"></i></span>
+            <div class="logo-text">
+                <h1>Museum Busana</h1>
+                <span class="sub-logo">Nusantara</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <button id="nav-btn-timeline" class="active" onclick="switchTab('timeline')"><i class="fa-solid fa-timeline"></i> Linimasa</button>
+            <button id="nav-btn-compare" onclick="switchTab('compare')"><i class="fa-solid fa-code-compare"></i> Komparator Evolusi</button>
+            <button id="nav-btn-wastra" onclick="switchTab('wastra')"><i class="fa-solid fa-scroll"></i> Pustaka Wastra</button>
+            <button id="nav-btn-fav" onclick="switchTab('favorites')"><i class="fa-solid fa-bookmark"></i> Tersimpan <span id="fav-count" class="badge">0</span></button>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- TAB 1: TIMELINE (DEFAULT) -->
+        <section id="tab-timeline" class="tab-content active">
+            <div class="hero">
+                <span class="hero-tag">Eksplorasi Sejarah Busana</span>
+                <h2>Evolusi Busana Nusantara</h2>
+                <p>Telusuri bagaimana pakaian bangsawan kerajaan kuno beradaptasi melewati zaman kolonial, perjuangan kemerdekaan, hingga melahirkan gaya urban modern hari ini.</p>
+            </div>
+
+            <!-- TIMELINE NAVIGATOR (HORIZONTAL STEPS) -->
+            <div class="timeline-nav-wrapper">
+                <div class="timeline-line"></div>
+                <div class="timeline-steps" id="timeline-steps">
+                    <!-- Javascript akan me-render tombol linimasa di sini -->
+                </div>
+            </div>
+
+            <!-- ERA DESCRIPTION CARD -->
+            <div class="era-info-card animate-fade-in" id="era-info-card">
+                <div class="era-info-header">
+                    <span class="era-period" id="era-display-period">Abad ke-4 - ke-15</span>
+                    <h3 class="era-name" id="era-display-name">Era Kerajaan Klasik</h3>
+                </div>
+                <p class="era-desc" id="era-display-desc">Masa kejayaan Hindu-Buddha...</p>
+            </div>
+
+            <!-- CLOTHES CATALOG GRID FOR CURRENT ERA -->
+            <div class="catalog-heading">
+                <h3>Koleksi Pakaian Adat Era Terpilih</h3>
+                <span id="catalog-count-text">Menampilkan 2 pakaian adat</span>
+            </div>
+            
+            <div class="catalog-grid" id="timeline-catalog-grid">
+                <!-- Javascript me-render kartu pakaian di sini -->
+            </div>
+        </section>
+
+        <!-- TAB 2: COMPARATOR EVOLUSI (SIMULATOR) -->
+        <section id="tab-compare" class="tab-content">
+            <div class="section-title">
+                <span class="hero-tag">Simulator Komparasi</span>
+                <h2>Perbandingan Siluet & Elemen</h2>
+                <p>Pilih dua busana dari era yang berbeda untuk menganalisis langsung proses transformasi kain, struktur pakaian, dan filosofi ornamen dari masa ke masa.</p>
+            </div>
+
+            <div class="compare-selector-panel">
+                <div class="selector-col">
+                    <label for="compare-select-1">Busana Awal (Kerajaan Kuno):</label>
+                    <select id="compare-select-1" onchange="runComparison()">
+                        <!-- Opsi dinamis -->
+                    </select>
+                </div>
+                <div class="compare-vs-badge">VS</div>
+                <div class="selector-col">
+                    <label for="compare-select-2">Busana Penerus (Modern/Kolonial):</label>
+                    <select id="compare-select-2" onchange="runComparison()">
+                        <!-- Opsi dinamis -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- COMPARISON DISPLAY GRID -->
+            <div class="compare-display-grid" id="compare-display-grid">
+                <!-- Javascript akan merender perbandingan detail disini -->
+            </div>
+        </section>
+
+        <!-- TAB 3: WASTRA LIBRARY -->
+        <section id="tab-wastra" class="tab-content">
+            <div class="section-title">
+                <span class="hero-tag">Perpustakaan Tekstil</span>
+                <h2>Mahakarya Wastra Nusantara</h2>
+                <p>Setiap lembar kain tradisional menyimpan rajutan filosofi hidup leluhur. Kenali jenis tekstil utama yang menjadi bahan dasar pakaian adat nusantara.</p>
+            </div>
+
+            <div class="wastra-grid" id="wastra-grid">
+                <!-- Render wastra dinamis -->
+            </div>
+        </section>
+
+        <!-- TAB 4: FAVORITES (SAVED) -->
+        <section id="tab-favorites" class="tab-content">
+            <div class="section-title">
+                <span class="hero-tag">Galeri Pribadi</span>
+                <h2>Koleksi Tersimpan</h2>
+                <p>Daftar busana nusantara pilihan yang Anda tandai selama mempelajari sejarah linimasa.</p>
+            </div>
+
+            <div class="catalog-grid" id="favorites-grid">
+                <!-- Kartu favorit -->
+            </div>
+
+            <div class="empty-state hidden" id="favorites-empty">
+                <i class="fa-regular fa-bookmark"></i>
+                <h3>Belum Ada Koleksi Tersimpan</h3>
+                <p>Klik tombol bookmark <i class="fa-regular fa-bookmark"></i> pada pakaian di halaman linimasa untuk menyimpannya di sini.</p>
+                <button class="primary-btn" onclick="switchTab('timeline')">Jelajahi Linimasa</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- DETAIL MODAL OVERLAY -->
+    <div class="modal-overlay" id="detail-modal" onclick="closeModal(event)">
+        <div class="modal-card animate-fade-in" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-body">
+                <div class="modal-left">
+                    <!-- Dynamic SVG Illustration Container -->
+                    <div class="modal-illustration-container" id="modal-img-container">
+                        <!-- Ditambahkan lewat JS -->
+                    </div>
+                    <div class="modal-palette" id="modal-palette">
+                        <!-- Palet warna -->
+                    </div>
+                </div>
+                
+                <div class="modal-right">
+                    <div class="modal-header-meta">
+                        <span class="origin-badge" id="modal-origin">Kerajaan Sriwijaya</span>
+                        <span class="wastra-badge" id="modal-wastra-type">Songket Emas</span>
+                    </div>
+                    <h2 class="modal-title" id="modal-clothing-name">Aesan Gede</h2>
+                    
+                    <div class="modal-action-row">
+                        <button class="bookmark-action-btn" id="modal-fav-btn" onclick="toggleFavoriteCurrent()">
+                            <i class="fa-regular fa-bookmark"></i> Simpan Halaman
+                        </button>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-landmark"></i> Latar Belakang Sejarah</h3>
+                        <p id="modal-desc">Deskripsi sejarah...</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-feather-pointed"></i> Filosofi Busana</h3>
+                        <p id="modal-philosophy">Filosofi dibalik baju adat...</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Catatan Evolusi Mode</h3>
+                        <p id="modal-evolution" class="evolution-highlight">Bagaimana baju ini berevolusi...</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-list-check"></i> Komponen Utama</h3>
+                        <ul class="components-list" id="modal-components">
+                            <!-- List komponen -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Museum Busana Nusantara. Dirancang untuk melestarikan evolusi sandang budaya Indonesia.</p>
+        <p class="footer-subtext">Kerajaan Kuno $\rightarrow$ Kolonial $\rightarrow$ Modern Fusion</p>
+    </footer>
+
+    <!-- Muat Script JS -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
